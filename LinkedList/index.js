@@ -10,6 +10,7 @@ function Node(value, next, prev) {
 	this.next = next;
 }
 
+// O(1)
 LinkedList.prototype.addToHead = function (value) {
 	var newNode = new Node(value, this.head, null);
 
@@ -22,6 +23,7 @@ LinkedList.prototype.addToHead = function (value) {
 	this.head = newNode;
 };
 
+// O(1)
 LinkedList.prototype.addToTail = function (value) {
 	var newNode = new Node(value, null, this.tail);
 
@@ -70,6 +72,7 @@ LinkedList.prototype.removeTail = function () {
 	return val;
 };
 
+// O(n)
 LinkedList.prototype.search = function (searchValue) {
 	var currentNode = this.head;
 
@@ -82,6 +85,7 @@ LinkedList.prototype.search = function (searchValue) {
 	return null;
 };
 
+// O(n)
 LinkedList.prototype.indexOf = function (value) {
 	var currentNode = this.head;
 	var currentIndex = 0;
