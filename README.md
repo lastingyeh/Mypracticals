@@ -7,7 +7,7 @@
 ### Binary search tree (BST)
 
 ### HashTable
----
+
 ## Exercises
 
 - ASCii Transform Char
@@ -19,9 +19,6 @@
 - Reverse Array In Place
 - Reverse Words
 
-### Fizz Buzz
-
----
 ## References
 1. [Ultimate JavaScript Interview Course](https://www.udemy.com/course/ultimate-javascript-interview-course/)
 
