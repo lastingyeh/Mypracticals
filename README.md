@@ -1,14 +1,12 @@
-# Algorithm practicals
+# Algorithm practicals (Javascript)
 
-## Basic
+### Basic
 
-### LinkedList
+- LinkedList
+- Binary search tree (BST)
+- HashTable
 
-### Binary search tree (BST)
-
-### HashTable
-
-## Exercises
+### Exercises
 
 - ASCii Transform Char
 - Caesar Cipher
@@ -19,6 +17,6 @@
 - Reverse Array In Place
 - Reverse Words
 
-## References
+### References
 1. [Ultimate JavaScript Interview Course](https://www.udemy.com/course/ultimate-javascript-interview-course/)
 
