@@ -3,29 +3,30 @@
  * @return {boolean}
  */
 var isValid = function (s) {
-	if (s.length % 2 !== 0) {
-		return false;
-	}
-
-	const dictObj = {
-		'{': '}',
-		'[': ']',
+	const stack = [];
+	const dict = {
 		'(': ')',
+		'[': ']',
+		'{': '}',
 	};
 
-	// {[]} = [0,3],[1,2]
-	// [{[]}] = [0,5],[1,4],[2,3]
-	let isValidFlag = false;
-
-	for (let i = 0; i < s.length / 2; i += 1) {
-		let targetIdx = s.length - i - 1;
-		// console.log(s[i], s[targetIdx], i, targetIdx);
-		if (dictObj[s[i]] === s[targetIdx] || dictObj[s[i * 2]] === s[i * 2 + 1]) {
-            console.log(i);
-			isValidFlag = true;
+	for (char of s) {
+		if (char === dict[stack[stack.length - 1]]) {
+            // console.log(stack);
+			if (stack.length > 0) {
+                console.log(stack);
+				stack.pop();
+                console.log(stack);
+			} else {
+				return false;
+			}
+		} else {
+            console.log(char, stack);
+			stack.push(char);
 		}
 	}
-	return isValidFlag;
+
+	return stack.length === 0;
 };
 
 // console.log(isValid('()'));
@@ -33,4 +34,5 @@ var isValid = function (s) {
 // console.log(isValid('(]'));
 // console.log(isValid('[{[]}]'));
 // console.log(isValid('{}[]()'));
-console.log(isValid('(){}}{'));
+// console.log(isValid('(){}}{'));
+console.log(isValid('(([]){})'));
