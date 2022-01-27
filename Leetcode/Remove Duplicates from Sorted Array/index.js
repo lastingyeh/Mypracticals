@@ -12,8 +12,6 @@ var removeDuplicates = function (nums) {
 		}
 	}
 
-    console.log(nums);
-
 	return n1 + 1;
 };
 

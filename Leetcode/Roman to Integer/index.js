@@ -40,9 +40,6 @@ var romanToInt = function (s) {
 			step = 1;
 		}
 
-		console.log(val1);
-
-		// console.log('result', val1);
 		result += val1;
 	}
 
