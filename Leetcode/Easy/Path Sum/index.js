@@ -20,3 +20,5 @@ var hasPathSum = function (root, targetSum) {
 
 	return hasPathSum(root.left, targetSum - root.val) || hasPathSum(root.right, targetSum - root.val);
 };
+
+// https://leetcode.com/problems/path-sum

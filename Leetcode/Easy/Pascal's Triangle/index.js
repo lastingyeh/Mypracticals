@@ -27,3 +27,5 @@ var generate = function (numRows) {
 };
 
 console.log(generate(5));
+
+// https://leetcode.com/problems/pascals-triangle

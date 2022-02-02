@@ -24,6 +24,14 @@
 - Sieve of Eratosthenes
 - Two Sum
 
+### Leetcode
+
+- Easy
+
+- Medium
+
 ### References
 1. [Ultimate JavaScript Interview Course](https://www.udemy.com/course/ultimate-javascript-interview-course/)
+
+2. [Leetcode](https://leetcode.com/)
 

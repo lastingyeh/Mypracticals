@@ -21,3 +21,5 @@ var searchInsert = function (nums, target) {
 };
 
 console.log(searchInsert([1, 2, 5, 6, 7], 6));
+
+// https://leetcode.com/problems/search-insert-position

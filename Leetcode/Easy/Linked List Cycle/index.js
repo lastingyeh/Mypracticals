@@ -27,3 +27,5 @@ var hasCycle = function (head) {
 
 	return false;
 };
+
+// https://leetcode.com/problems/linked-list-cycle

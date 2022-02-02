@@ -12,3 +12,5 @@ var isPalindrome = function (x) {
 
 	return x === nint;
 };
+
+// https://leetcode.com/problems/palindrome-number

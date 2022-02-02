@@ -8,3 +8,5 @@ var detectCapitalUse = function (word) {
 	}
     return false;
 };
+
+// https://leetcode.com/problems/detect-capital

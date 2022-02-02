@@ -19,3 +19,5 @@ var isPalindrome = function (s) {
 };
 
 console.log(isPalindrome('0P'));
+
+// https://leetcode.com/problems/valid-palindrome

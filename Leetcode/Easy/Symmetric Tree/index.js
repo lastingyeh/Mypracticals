@@ -25,3 +25,5 @@ let isMirror = function (left, right) {
 
 	return isMirror(left.left, right.right) && isMirror(left.right, right.left);
 };
+
+// https://leetcode.com/problems/symmetric-tree

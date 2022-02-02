@@ -16,3 +16,5 @@ var removeDuplicates = function (nums) {
 };
 
 console.log(removeDuplicates([1, 1, 2, 2, 2, 3, 4]));
+
+// https://leetcode.com/problems/remove-duplicates-from-sorted-array

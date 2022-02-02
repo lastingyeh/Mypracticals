@@ -12,3 +12,5 @@ var mySqrt = function (x) {
 };
 
 console.log(mySqrt(8));
+
+// https://leetcode.com/problems/sqrtx

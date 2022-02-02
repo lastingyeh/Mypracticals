@@ -32,3 +32,5 @@ var isValid = function (s) {
 // console.log(isValid('{}[]()'));
 // console.log(isValid('(){}}{'));
 console.log(isValid('(([]){})'));
+
+// https://leetcode.com/problems/valid-parentheses

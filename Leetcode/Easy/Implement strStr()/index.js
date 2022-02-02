@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/implement-strstr/
 /**
  * @param {string} haystack
  * @param {string} needle
@@ -18,3 +19,5 @@ var strStr = function (haystack, needle) {
 };
 
 console.log(strStr('', ''));
+
+// https://leetcode.com/problems/implement-strstr
