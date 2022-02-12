@@ -30,8 +30,12 @@
 
 - Medium
 
+- Hard
+
 ### References
 1. [Ultimate JavaScript Interview Course](https://www.udemy.com/course/ultimate-javascript-interview-course/)
 
 2. [Leetcode](https://leetcode.com/)
+
+3. [Master the Coding Interview: Big Tech (FAANG) Interviews](https://www.udemy.com/course/master-the-coding-interview-big-tech-faang-interviews/)
 

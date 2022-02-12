@@ -3,9 +3,23 @@
  * @return {string}
  */
 var convertToTitle = function (columnNumber) {
-    let mod = columnNumber % 26
+	const indexAscii = 64;
+	const letters = 26;
 
-    console.log(mod);
+	let letter = 0,
+		column = '';
+
+	while (columnNumber > 0) {
+		letter = columnNumber % letters;
+
+		if (!letter) letter = letters;
+
+		columnNumber = (columnNumber - letter) / letters;
+
+		column = String.fromCharCode(indexAscii + letter) + column;
+	}
+
+	return column;
 };
 
-convertToTitle(701)
+convertToTitle(2147483647);
