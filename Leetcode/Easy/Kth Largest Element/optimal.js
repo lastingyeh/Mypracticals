@@ -1,10 +1,3 @@
-// step 1 set {pivot} index (last point)
-// step 2 divid into two sections between {pivot} -> less (left) and great (right)
-// step 3 set i (target index), j (loop compare)
-// step 4 check j's value as if less than pivotal that swap(j,i) and i++
-// step 5 swap(i, j) util j === pivot
-// cycle above steps
-
 /**
  * @param {number[]} nums
  * @param {number} left
@@ -12,10 +5,14 @@
  * @return {number}
  */
 const getPartition = function (nums, left, right) {
+	// [5,3,1,6,4,2]
 	const pivotElement = nums[right];
+
 	let partIdx = left;
 
-	for (let j = left; j < right; j++) {
+	// default set i = j
+	// move j that check nums[j] <= pivotElement
+	for (let j = partIdx; j < right; j++) {
 		if (nums[j] <= pivotElement) {
 			swap(nums, partIdx, j);
 			partIdx++;
@@ -33,25 +30,33 @@ const getPartition = function (nums, left, right) {
  * @param {number} right
  * @return {void}
  */
-const swap = function (arr, i, j) {
-	const temp = arr[i];
+const swap = function (nums, left, right) {
+	let tmp = nums[left];
 
-	arr[i] = arr[j];
-	arr[j] = temp;
+	nums[left] = nums[right];
+	nums[right] = tmp;
 };
 
 /**
  * @param {number[]} nums
  * @param {number} left
  * @param {number} right
+ * @param {number} indexToFind
  * @return {void}
  */
-const quickSort = function (nums, left, right) {
+const quickSort = function (nums, left, right, indexToFind) {
 	if (left < right) {
 		const partIdx = getPartition(nums, left, right);
 
-		quickSort(nums, left, partIdx - 1);
-		quickSort(nums, partIdx + 1, right);
+        if(partIdx === indexToFind){
+            return nums[partIdx]
+        }
+
+		if (indexToFind < partIdx) {
+			quickSort(nums, left, partIdx - 1, indexToFind);
+		} else {
+			quickSort(nums, partIdx + 1, right, indexToFind);
+		}
 	}
 };
 
@@ -60,12 +65,15 @@ const quickSort = function (nums, left, right) {
  * @param {number} k
  * @return {number}
  */
+
+// T: O(N) (best) O(N^2) (worst when desc)
+// S: O(1)
 var findKthLargest = function (nums, k) {
-	const idxToFind = nums.length - k;
+	const indexToFind = nums.length - k;
 
-	quickSort(nums, 0, nums.length - 1);
+	quickSort(nums, 0, nums.length - 1, indexToFind);
 
-	return nums[idxToFind];
+	return nums[indexToFind];
 };
 
 const array = [5, 3, 1, 6, 4, 2];
