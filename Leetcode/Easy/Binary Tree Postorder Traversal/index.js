@@ -17,8 +17,6 @@ var postorderTraversal = function (root) {
 	while (stack.length) {
 		let current = stack.pop();
 
-		console.log({ current });
-
 		result.unshift(current.val);
 
 		if (current.left) stack.push(current.left);
