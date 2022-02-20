@@ -5,6 +5,13 @@ const directions = [
 	[0, -1],
 ];
 
+// BFS
+// T:O(M * N)
+// S:O(max(M,N))
+
+// DFS
+// T:O(M * N)
+// S:O(M * N)
 /**
  * @param {character[][]} matrix
  * @return {number}
@@ -15,12 +22,15 @@ var numIslands = function (matrix) {
 
 	for (let row = 0; row < matrix.length; row++) {
 		for (let col = 0; col < matrix[0].length; col++) {
+			// meet '1'
 			if (matrix[row][col] === '1') {
 				islandCount++;
 				matrix[row][col] = '0';
-				const queue = [];
-				queue.push([row, col]);
 
+				const queue = [];
+
+				queue.push([row, col]);
+				// bfs
 				while (queue.length) {
 					const currentPos = queue.shift();
 					const currentRow = currentPos[0];
@@ -54,3 +64,5 @@ console.log(
 		['0', '0', '0', '0', '0'],
 	])
 );
+
+// https://leetcode.com/problems/number-of-islands/
