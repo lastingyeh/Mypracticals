@@ -32,7 +32,7 @@ const dfs = (grid, row, col, count) => {
 	for (let i = 0; i < directions.length; i++) {
 		const currentDir = directions[i];
         
-		dfs(grid, row + currentDir[0] + row, col + currentDir[1], count + 1);
+		dfs(grid, row + currentDir[0], col + currentDir[1], count + 1);
 	}
 };
 
