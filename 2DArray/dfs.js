@@ -35,7 +35,7 @@ const traversalDFS = function (matrix) {
  */
 const dfs = (matrix, row, col, seen, values) => {
 	if (row < 0 || col < 0 || row >= matrix.length || col >= matrix[0].length || seen[row][col]) return;
-
+	
 	values.push(matrix[row][col]);
 
 	seen[row][col] = true;
@@ -54,3 +54,5 @@ const matrix = [
 	[6, 7, 8, 9, 10],
 	[11, 12, 13, 14, 15],
 ];
+
+traversalDFS(matrix)
