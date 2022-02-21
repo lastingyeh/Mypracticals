@@ -5,34 +5,38 @@
  * @param {number[]} informTime
  * @return {number}
  */
-var numOfMinutes = function (n, headID, manager, informTime) {
-	const emps = {};
+var numOfMinutes = function (n, headID, managers, informTime) {
+	const adjList = managers.map(() => []);
 
-	for (let i = 0; i < n; i++) {
-		emps[i] = [manager[i], informTime[i]];
+	for (let emp = 0; emp < n; emp++) {
+		const manager = managers[emp];
+
+		if (manager === -1) continue;
+
+		adjList[manager].push(emp);
 	}
 
-	console.log(emps);
+	return dfs(headID, adjList, informTime);
+};
 
-	const head = emps[headID];
-	const infoTime = head[1];
-	const seen = { [headID]: true };
+/**
+ * @param {number} currentId
+ * @param {number[][]} adjList
+ * @param {number[]} informTime
+ * @return {number}
+ */
+const dfs = (currentId, adjList, informTime) => {
+	// the last subordinator
+	if (adjList[currentId].length === 0) return 0;
 
-	const queue = [[headID, infoTime]];
+	let max = 0;
+	const subordinates = adjList[currentId];
 
-	while (queue.length) {
-		const top = queue.shift();
-
-		Object.values(emps).forEach((val, idx) => {
-			const [manager, informTime] = [val[0], val[1]];
-
-			if (manager === top[0] && !seen[idx]) {
-				seen[idx] = true;
-
-				queue.push([idx, informTime]);
-			}
-		});
+	for (let i = 0; i < subordinates.length; i++) {
+		max = Math.max(max, dfs(subordinates[i], adjList, informTime));
 	}
+
+	return max + informTime[currentId];
 };
 
 numOfMinutes(8, 4, [2, 2, 4, 6, -1, 4, 4, 5], [0, 0, 4, 0, 7, 3, 6, 0]);
